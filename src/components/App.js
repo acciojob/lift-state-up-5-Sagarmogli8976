@@ -4,18 +4,14 @@ import LoginForm from "./LoginForm";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div>
       <h1>Parent Component</h1>
 
       {isLoggedIn ? (
-        <h2>You are logged in!</h2>
+        <p>You are logged in!</p>
       ) : (
-        <LoginForm isLoggedIn={isLoggedIn} onLogin={handleLogin} />
+        <LoginForm setIsLoggedIn={setIsLoggedIn} />
       )}
     </div>
   );
